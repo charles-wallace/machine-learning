@@ -17,15 +17,15 @@ regions (use lh = lv = -10, uh = uv = 10, rh = rv = 0.2).*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>58.75%</td> <td>58.00%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_i_1.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_i_1.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>2</td> <td>26.25%</td> <td>26.75%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_i_2.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_i_2.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>3</td> <td>26.75%</td> <td>27.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_i_3.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_i_3.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -34,15 +34,15 @@ regions (use lh = lv = -10, uh = uv = 10, rh = rv = 0.2).*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>11.25%</td> <td>12.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_ii_1.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_ii_1.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>2</td> <td>3.25%</td> <td>3.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_ii_2.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_ii_2.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>3</td> <td>1.75%</td> <td>2.75%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_ii_3.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_ii_3.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -51,15 +51,15 @@ regions (use lh = lv = -10, uh = uv = 10, rh = rv = 0.2).*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>5.00%</td> <td>5.00%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_iii_1.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_iii_1.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>2</td> <td>4.25%</td> <td>2.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_iii_2.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_iii_2.png" height="200" /></td> 
 </tr>
 <tr> 
 <td>3</td> <td>2.75%</td> <td>1.75%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_2_iii_3.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_2_iii_3.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -84,7 +84,7 @@ regions.*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>23.75%</td> <td>25.75%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_3_i.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_3_i.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -93,7 +93,7 @@ regions.*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>50.00%</td> <td>50.00%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_3_ii.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_3_ii.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -102,7 +102,7 @@ regions.*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>12.00%</td> <td>12.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_3_iii.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_3_iii.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -111,7 +111,7 @@ regions.*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>43.00%</td> <td>43.75%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_3_iv.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_3_iv.png" height="200" /></td> 
 </tr>
 </table>
 
@@ -134,7 +134,7 @@ regions.*
 <tr><th>Training Run</th> <th>Error w/ X1</th> <th>Error w/ X2</th> <th>Decision Regions</th></tr>
 <tr> 
 <td>1</td> <td>0.25%</td> <td>0.25%</td> 
-<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Non-Linear%20Classifiers/plot/4_4.png" height="200" /></td> 
+<td><img src="https://github.com/cyw214/Machine-Learning/blob/master/Pattern%20Recognition/Non-Linear%20Classifiers/plot/4_4.png" height="200" /></td> 
 </tr>
 </table>
 
