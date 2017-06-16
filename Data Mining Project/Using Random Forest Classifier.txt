@@ -1,0 +1,159 @@
+Using Random Forest Classifier:
+n_estimators =  2
+0.940228897548
+n_estimators =  3
+0.940412997453
+n_estimators =  4
+0.940558743211
+n_estimators =  5
+0.940704488969
+n_estimators =  6
+0.940650793164
+n_estimators =  7
+0.940811880581
+n_estimators =  8
+0.940735172287
+n_estimators =  9
+0.940850234727
+n_estimators =  10
+0.940850234727
+n_estimators =  11
+0.94094228468
+n_estimators =  12
+0.940903930533
+n_estimators =  13
+0.940995980485
+n_estimators =  14
+0.940980638827
+n_estimators =  15
+0.940988309656
+n_estimators =  16
+0.940972967997
+n_estimators =  17
+0.94105734712
+n_estimators =  18
+0.941011322144
+n_estimators =  19
+0.941088030438
+n_estimators =  20
+0.94105734712
+n_estimators =  21
+0.941018992974
+n_estimators =  22
+0.94105734712
+n_estimators =  23
+0.941026663803
+n_estimators =  24
+0.94106501795
+n_estimators =  25
+0.94105734712
+n_estimators =  26
+0.941026663803
+n_estimators =  27
+0.94106501795
+n_estimators =  28
+0.941042005462
+n_estimators =  29
+0.941080359608
+n_estimators =  30
+0.941018992974
+n_estimators =  31
+0.941072688779
+n_estimators =  32
+0.941088030438
+n_estimators =  33
+0.941095701267
+n_estimators =  34
+0.941080359608
+n_estimators =  35
+0.941095701267
+n_estimators =  36
+0.941080359608
+n_estimators =  37
+0.941095701267
+n_estimators =  38
+0.941103372097
+n_estimators =  39
+0.941103372097
+n_estimators =  40
+0.941088030438
+n_estimators =  41
+0.941095701267
+n_estimators =  42
+0.941072688779
+n_estimators =  43
+0.941103372097
+n_estimators =  44
+0.941080359608
+n_estimators =  45
+0.941095701267
+n_estimators =  46
+0.941095701267
+n_estimators =  47
+0.941103372097
+n_estimators =  48
+0.941095701267
+n_estimators =  49
+0.941080359608
+n_estimators =  50
+0.941095701267
+n_estimators =  51
+0.941118713755
+n_estimators =  52
+0.941118713755
+n_estimators =  53
+0.941103372097
+n_estimators =  54
+0.941111042926
+n_estimators =  55
+0.941118713755
+n_estimators =  56
+0.941095701267
+n_estimators =  57
+0.941111042926
+n_estimators =  58
+0.941111042926
+n_estimators =  59
+0.941111042926
+n_estimators =  60
+0.941111042926
+n_estimators =  61
+0.941111042926
+n_estimators =  62
+0.941118713755
+n_estimators =  63
+0.941103372097
+n_estimators =  64
+0.941111042926
+n_estimators =  65
+0.941111042926
+n_estimators =  66
+0.941103372097
+n_estimators =  67
+0.941111042926
+n_estimators =  68
+0.941111042926
+n_estimators =  69
+0.941118713755
+n_estimators =  70
+0.941111042926
+n_estimators =  71
+0.941118713755
+n_estimators =  72
+0.941111042926
+n_estimators =  73
+0.941111042926
+n_estimators =  74
+0.941118713755
+n_estimators =  75
+0.941118713755
+n_estimators =  76
+0.941118713755
+n_estimators =  77
+0.941118713755
+n_estimators =  78
+0.941111042926
+n_estimators =  79
+0.941118713755
+n_estimators =  80
+0.941111042926

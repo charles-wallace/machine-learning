@@ -1,0 +1,122 @@
+# Identify who can be converted into loyal customers
+
+Project Description: predict whether a new customer acquired during the promotion on the "Double 11" day will turn into a loyal customer for given merchants
+
+Goal: Predict the probability that new customers would purchase items from the same merchants again within 6 months.
+
+=============
+= Data Base =
+=============
+DB Instance Identity: DataMiningDB
+Master Username: cwallace
+Master Password: 3470307cjxo
+
+
+==========
+= Tables =
+==========
+
+USER_ID
+-------
+	user_id:     customer id
+	age_range: 	 0 for < 18,    1 for [18, 24], 2 for [25,29]
+			   	 3 for [30,34], 4 for [35, 39], 5 for [40,49]
+			   	 6 for >= 50,   7 for unknown
+	gender:		 0 for female,  1 for male
+
+USER_LOG
+--------
+	user_id:  	 customer_id
+	item_id: 	 item id
+	cat_id:		 id of the product or category that an item 
+				 belongs to.
+	merchant_id: merchant id
+	brand_id:	 id of the brand of an item
+	time_stamp:	 date when the action took place (mm:dd)
+	action_type: 0 = click    1 = add to cart
+				 2 = purchase 3 = add-to-favourite
+
+- set primary keys to user_id 
+
+======================
+= Summary Statistics =
+======================
+
+User Info:
+	Customer Count:        212062
+	
+	By Gender:
+	----------
+	Female Customer's (0): 60683
+		Female Age Range:
+		-----------------
+		< 18     (0): 9
+		[18, 24] (1): 16801
+		[25, 29] (2): 37481
+		[30,34]  (3): 25992
+		[35, 39] (4): 13967
+		[40,49]  (5): 12695
+		>= 50    (6): 2698
+		unknown  (7): 33448
+
+	Male Customer's   (1): 143091
+		Male Age Range:
+		---------------
+		< 18     (0): 2
+		[18, 24] (1): 9155
+		[25, 29] (2): 16501
+		[30,34]  (3): 11837
+		[35, 39] (4): 5734
+		[40,49]  (5): 4820
+		>= 50    (6): 1266
+		unknown  (7): 11368
+	
+	Unknown Gender    (2): 8288
+		Unknown Age Range:
+		---------------
+		< 18     (0): 0
+		[18, 24] (1): 420
+		[25, 29] (2): 1891
+		[30,34]  (3): 2110
+		[35, 39] (4): 734
+		[40,49]  (5): 268
+		>= 50    (6): 101
+		unknown  (7): 2764
+
+	Age Range (Male, Female, Unknown):
+	----------
+	< 18     (0): 11
+	[18, 24] (1): 26376
+	[25, 29] (2): 55873
+	[30,34]  (3): 39939
+	[35, 39] (4): 20435
+	[40,49]  (5): 17783
+	>= 50    (6): 4065
+	unknown  (7): 47580
+
+User Log Info:
+
+General Info
+------------
+# of Transactions: 26258292
+# of Merchants: 4995
+# of Items: 916773
+# of Categories: 1581
+# of Brands: 8161
+# of Time Stamps: 186
+
+Action Types
+------------
+	Total Clicks      	   (0): 23151754
+	Total Add to Cart 	   (1): 34004
+	Total Purchased   	   (2): 1643970
+	Total Add-To-Favourite (3): 1428564
+
+Merchant/Category Statistics:
+-----------------------------
+Average # Merchant Categories: 5256.91532
+Max # of Merchant Categories:  370100
+Min # of Merchant Categories:  78
+
+
+

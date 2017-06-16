@@ -1,0 +1,224 @@
+/*
+-----------------------------------
+action_type count for customer#merchant:
+-----------------------------------
+*/
+
+create table user_merchant_action(
+  user_id  integer,
+  merchant_id integer,
+  total_click integer,
+  total_add_to_cart integer,
+  total_purchase integer, 
+  total_add_to_favourite integer,
+  constraint pk_user_merchant_action primary key (user_id, merchant_id)
+);
+
+insert into user_merchant_action (user_id, merchant_id , total_click, total_purchase, total_add_to_cart, total_add_to_favourite)
+select user_id, merchant_id, 0, 0, 0, 0
+from ( select user_id, merchant_id, 0, 0, 0, 0 
+       from user_log
+       group by (user_id, merchant_id)
+       order by user_id, merchant_id
+);
+
+/* 
+Inserts Into user_merchant_action 
+---------------------------------
+*/
+update user_merchant_action set (user_merchant_action.total_click) = (select group_query.total_click
+from (select user_id, merchant_id, sum(nvl(action_type+1,0)) as total_click
+       from user_log
+       where action_type = 0
+       group by (user_id, merchant_id)
+) group_query
+where group_query.user_id = user_merchant_action.user_id and 
+group_query.merchant_id = user_merchant_action.merchant_id )
+where exists (select 1
+              from (select user_id, merchant_id, sum(nvl(action_type+1,0)) as total_click
+                    from user_log
+                    where action_type = 0
+                    group by (user_id, merchant_id)
+              ) group_query
+              where group_query.user_id = user_merchant_action.user_id and 
+              group_query.merchant_id = user_merchant_action.merchant_id );
+
+update user_merchant_action set (user_merchant_action.total_add_to_cart) = (select group_query.total_add_to_cart
+from (select user_id, merchant_id, sum(nvl(action_type),0) as total_add_to_cart
+       from user_log
+       where action_type = 1
+       group by (user_id, merchant_id)
+) group_query
+where group_query.user_id = user_merchant_action.user_id and 
+group_query.merchant_id = user_merchant_action.merchant_id )
+where exists (select 1
+              from (select user_id, merchant_id, sum(nvl(action_type,0)) as total_add_to_cart
+                    from user_log
+                    where action_type = 1
+                    group by (user_id, merchant_id)
+              ) group_query
+              where group_query.user_id = user_merchant_action.user_id and 
+              group_query.merchant_id = user_merchant_action.merchant_id );
+
+update user_merchant_action set (user_merchant_action.total_purchase) = (select group_query.total_purchase
+from (select user_id, merchant_id, sum(nvl(action_type-1),0) as total_purchase
+       from user_log
+       where action_type = 2
+       group by (user_id, merchant_id)
+) group_query
+where group_query.user_id = user_merchant_action.user_id and 
+group_query.merchant_id = user_merchant_action.merchant_id )
+where exists (select 1
+              from (select user_id, merchant_id, sum(nvl(action_type-1),0) as total_purchase
+                    from user_log
+                    where action_type = 2
+                    group by (user_id, merchant_id)
+              ) group_query
+              where group_query.user_id = user_merchant_action.user_id and 
+              group_query.merchant_id = user_merchant_action.merchant_id );
+
+update user_merchant_action set (user_merchant_action.total_add_to_favourite) = (select group_query.total_add_to_favourite
+from (select user_id, merchant_id, sum(nvl(action_type-2),0) as total_add_to_favourite
+       from user_log
+       where action_type = 3
+       group by (user_id, merchant_id)
+) group_query
+where group_query.user_id = user_merchant_action.user_id and 
+group_query.merchant_id = user_merchant_action.merchant_id )
+where exists (select 1
+              from (select user_id, merchant_id, sum(nvl(action_type-2)) as total_add_to_favourite
+                    from user_log
+                    where action_type = 3
+                    group by (user_id, merchant_id)
+              ) group_query
+              where group_query.user_id = user_merchant_action.user_id and 
+              group_query.merchant_id = user_merchant_action.merchant_id );
+
+select sum(total_click) from user_merchant_action;
+select sum(total_add_to_cart) from user_merchant_action;
+select sum(total_purchase) from user_merchant_action;
+select sum(total_add_to_favourite) from user_merchant_action;
+
+select sum(nvl(action_type + 1,0)) from user_log where action_type = 0;
+select sum(nvl(action_type, 0)) from user_log where action_type = 1;
+select sum(nvl(action_type-1, 0)) from user_log where action_type = 2;
+select sum(nvl(action_type-2, 0)) from user_log where action_type = 3;
+
+/*
+#############################################
+##### Joining User_Log and  Train_Label #####
+#############################################
+*/
+select *
+from user_log inner join train_label 
+     on user_log.USER_ID = train_label.user_id 
+        and 
+        user_log.merchant_ID = train_label.merchant_id;
+
+/*
+  #########################################################
+  ##### Joining User_Merchant_Action and  Train_Label #####
+  #########################################################
+*/
+select *
+from user_merchant_action inner join train_label 
+     on user_merchant_action.USER_ID = train_label.user_id 
+        and 
+        user_merchant_action.merchant_ID = train_label.merchant_id;
+
+/*
+  #############################################################################
+  ##### Creating Table For User_Merchant_Action User_Info and Train_Label #####
+  #############################################################################
+*/
+  create table user_action_info_train_label(
+    user_id  integer,
+    merchant_id integer,
+    age_range integer,
+    gender integer,
+    total_click integer,
+    total_add_to_cart integer,
+    total_purchase integer, 
+    total_add_to_favourite integer,
+    prob integer,
+    constraint pk_user_merchant_action primary key (user_id, merchant_id)
+);
+
+
+/*
+  ########################################
+  ##### Creating Table For Test Label#####
+  ########################################
+*/
+
+create table test_label(
+  user_id integer,
+  merchant_id integer,
+  constraint pk_test_label primary key(user_id, merchant_id)
+);
+
+/*
+  #############################################################################
+  ##### Creating Table For User_Merchant_Action_test User_Info and Test_Label #####
+  #############################################################################
+*/
+  create table user_action_info_train_label(
+    user_id  integer,
+    merchant_id integer,
+    age_range integer,
+    gender integer,
+    total_click integer,
+    total_add_to_cart integer,
+    total_purchase integer, 
+    total_add_to_favourite integer,
+    constraint pk_user_merchant_action primary key (user_id, merchant_id)
+);
+
+insert into user_action_info_test_label (user_id, merchant_id , age_range, gender, total_click, total_add_to_cart, total_purchase, total_add_to_favourite)
+select user_id, merchant_id , age_range, gender, total_click, total_add_to_cart, total_purchase, total_add_to_favourite 
+from ( select * from user_info natural join USER_MERCHANT_ACTION natural join test_label);
+
+
+/*
+Unused but useful
+-----------------
+*/
+/*  Cube for all types, might be useful  */
+insert into user_merchant_action (user_id, merchant_id , total_click, total_purchase, total_add_to_cart)
+select user_id, merchant_id, total_click, null, null
+from ( select user_id, merchant_id, sum(action_type+1) as total_click, null, null 
+       from user_log
+       where action_type = 0
+       group by (user_id, merchant_id)
+       order by user_id, merchant_id
+      );
+
+select C.user_id, C.merchant_id, C.total_click, P.total_purchase ,A.total_add_to_cart
+from
+((((select 
+    user_id, merchant_id, sum(action_type+1) as total_click
+    from user_log
+    where action_type = 0
+    group by cube(user_id, merchant_id)
+    order by user_id, merchant_id) C
+  inner join
+  (select user_id, merchant_id, sum(action_type) as total_add_to_cart
+    from user_log
+    where action_type = 1
+    group by cube(user_id, merchant_id)
+    order by user_id, merchant_id) A
+    on C.user_id=A.user_id and C.merchant_id = A.merchant_id)
+  inner join
+  (select 
+    user_id, merchant_id, sum(action_type-1) as total_purchase
+    from user_log
+    where action_type = 2
+    group by cube(user_id, merchant_id)
+    order by user_id, merchant_id) P on P.user_id = A.user_id and P.user_id= A.user_id)
+  inner join 
+    (select user_id, merchant_id, sum(action_type-2) as add_to_favourite
+      from user_log
+      where action_type = 3
+      group by cube(user_id, merchant_id)
+      order by user_id, merchant_id) F
+      on P.user_id=F.user_id and P.merchant_id = F.merchant_id);
